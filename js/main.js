@@ -7,6 +7,8 @@ const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.inner
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement);
+const light = new THREE.AmbientLight( 0xffffff );
+scene.add( light );
 
 camera.position.z = 5;
 
@@ -25,6 +27,6 @@ loader.load('Models/PCTest/a_personal_computer.glb', function ( gltf ) {
 
 function animate() {
     requestAnimationFrame( animate );
-    renderer.render(scene, camera);
+    renderer.render(scene, camera, light);
 }
 animate();
