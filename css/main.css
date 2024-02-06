@@ -10,3 +10,132 @@ html {
     margin: 0;
     padding: 0;
 }
+
+body {
+    background-color: rgba(20, 20, 20, 1.00);
+    font-size: 1vw;
+    color: rgba(230, 230, 230, 1.00);
+    font-family: "Poppins";
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Header */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+    width: 100%;
+    padding: 16px 24px;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.50);
+}
+
+#Logo {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    position: sticky;
+}
+
+.cls-1 {
+    transition-duration: .2s;
+    transition-timing-function: ease;
+    fill: rgb(230, 230, 230);
+}
+
+#Logo:hover .cls-1 {
+    fill: rgba(200, 200, 200, 1.00);
+}
+
+.nav-main {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.nav-main ul {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(5px);
+    padding-top: 90px;
+}
+
+.nav-main ul li {
+    text-align: center;
+    margin-top: 32px;
+    list-style-type: none;
+}
+
+.nav-main ul li a {
+    font-size: 20px;
+    color: rgba(230, 230, 230, 1.00);
+    text-transform: uppercase;
+    text-decoration: none;
+    transition-duration: .2s;
+    transition-timing-function: ease;
+}
+
+.nav-main ul li a:hover {
+    color: rgba(150, 150, 150, 1.00);
+}
+
+/* Hamburger */
+
+.hamburger-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.top-animate {
+    background: rgba(150, 150, 150, 1.00) !important;
+    -webkit-transform: translatey(6px) rotate(45deg);
+    transform: translatey(6px) rotate(45deg);
+}
+
+.mid-animate {
+    opacity: 0;
+}
+
+.bottom-animate {
+    background: rgba(150, 150, 150, 1.00) !important;
+    -webkit-transform: translatey(-6px) rotate(-225deg);
+    transform: translatey(-6px) rotate(-225deg);
+}
+
+.menui {
+    transition: .4s ease;
+    transition-timing-function: cubic-bezier(.75, 0, .29, 1.01);
+    width: 22px;
+    height: 2px;
+    border-radius: 2px;
+    margin-top: 4px;
+    background-color: rgba(230, 230, 230, 1.00);
+}
+
+.menui:first-child {
+    margin-top: 0;
+}
+
+.hamburger {
+    padding: 4px 0;
+}
+
+.icon-header {
+    display: flex;
+    align-items: center;
+    position: sticky;
+    user-select: none;
+}
+
+.icon-header:hover .menui {
+    background-color: rgba(200, 200, 200, 1.00);
+}
