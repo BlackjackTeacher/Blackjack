@@ -1,0 +1,20 @@
+@font-face {
+	font-family: 'Casino';
+	src: url('CasinoRegular.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Casino 3D';
+	src: url('Casino3DRegular.ttf') format('truetype');
+}
+@font-face {
+	font-family: "Casino 3D Filled";
+	src: url('Casino3DFilledRegular.ttf') format('truetype');
+}
+@font-face {
+	font-family: "Casino Shadow";
+	src: url('CasinoShadowRegular.ttf') format('truetype');
+}
+@font-face {
+	font-family: "Casino Flat";
+	src: url('CasinoFlatRegular.ttf') format('truetype');
+}

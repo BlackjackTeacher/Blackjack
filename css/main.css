@@ -1,3 +1,5 @@
+@import url("../fonts/casino/stylesheet.css");
+
 html {
     box-sizing: border-box;
     scroll-behavior: smooth;
@@ -12,10 +14,12 @@ html {
 }
 
 body {
+    background-image: url("/img/background.png");
     background-color: rgba(20, 20, 20, 1.00);
+    background-size: cover;
     font-size: 1vw;
     color: rgba(230, 230, 230, 1.00);
-    font-family: "Poppins";
+    font-family: "Casino Flat";
     font-weight: normal;
     font-style: normal;
 }
@@ -38,16 +42,17 @@ header {
     align-items: center;
     height: 60px;
     position: sticky;
+    z-index: 1;
 }
 
 .cls-1 {
-    transition-duration: .2s;
+    transition-duration: .4s;
     transition-timing-function: ease;
     fill: rgb(230, 230, 230);
 }
 
 #Logo:hover .cls-1 {
-    fill: rgba(200, 200, 200, 1.00);
+    fill: rgba(255, 0, 0, 1.00);
 }
 
 .nav-main {
@@ -79,12 +84,12 @@ header {
     color: rgba(230, 230, 230, 1.00);
     text-transform: uppercase;
     text-decoration: none;
-    transition-duration: .2s;
+    transition-duration: .4s;
     transition-timing-function: ease;
 }
 
 .nav-main ul li a:hover {
-    color: rgba(150, 150, 150, 1.00);
+    color: rgba(255, 0, 0, 1.00);
 }
 
 /* Hamburger */
@@ -96,7 +101,7 @@ header {
 }
 
 .top-animate {
-    background: rgba(150, 150, 150, 1.00) !important;
+    background: rgba(255, 0, 0, 1.00) !important;
     -webkit-transform: translatey(6px) rotate(45deg);
     transform: translatey(6px) rotate(45deg);
 }
@@ -106,7 +111,7 @@ header {
 }
 
 .bottom-animate {
-    background: rgba(150, 150, 150, 1.00) !important;
+    background: rgba(255, 0, 0, 1.00) !important;
     -webkit-transform: translatey(-6px) rotate(-225deg);
     transform: translatey(-6px) rotate(-225deg);
 }
@@ -138,4 +143,47 @@ header {
 
 .icon-header:hover .menui {
     background-color: rgba(200, 200, 200, 1.00);
+}
+
+@media (min-width: 768px) {
+
+    .icon-header {
+        display: none;
+    }
+
+    .nav-main {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .nav-main ul {
+        display: flex;
+        align-items: center;
+        width: unset;
+        height: unset;
+        position: unset;
+        top: unset;
+        left: unset;
+        padding: 0;
+        background: rgba(0, 0, 0, 0);
+        backdrop-filter: blur(0px);
+    }
+
+    .nav-main ul li {
+        display: flex;
+        align-items: center;
+        margin: 0 50px 0 0;
+        text-align: unset;
+    }
+
+    .nav-main ul li:last-child {
+        margin-right: 0;
+    }
+
+    .nav-main ul li a {
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+    }
 }
