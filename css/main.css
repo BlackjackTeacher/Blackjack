@@ -14,9 +14,7 @@ html {
 }
 
 body {
-    background-image: url("/img/background.png");
-    background-color: rgba(20, 20, 20, 1.00);
-    background-size: cover;
+    background-color: rgba(20, 20, 20, 1);
     font-size: 1vw;
     color: rgba(230, 230, 230, 1.00);
     font-family: "Casino Flat";

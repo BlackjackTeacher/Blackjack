@@ -1,7 +1,7 @@
+.vite/
 node_modules/
-package-lock.json
-package.json
 node_modules/.vite/deps/_metadata.json
 node_modules/.vite/deps/three.js
 node_modules/.vite/deps/three.js.map
-.vite/
+package.json
+package-lock.json
