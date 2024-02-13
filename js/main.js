@@ -32,7 +32,7 @@ loader.load('Models/PCTest/a_personal_computer.glb', function ( gltf ) {
 
 }, undefined, function (error){
 
-    console.error;('Wir haben einen Brief gegriegt, ich will mich umbringen');
+    console.error;('Wir haben einen Brief gekriegt, ich will mich umbringen');
 
 });
 
