@@ -11,3 +11,50 @@
     background-attachment: fixed;
     background-blend-mode: overlay;
 }
+
+.cls-1 {
+    fill: url(#linear-gradient);
+}
+
+.cls-1,
+.cls-2,
+.cls-3,
+.cls-4,
+.cls-5 {
+    stroke-width: 0px;
+}
+
+.cls-6 {
+    isolation: isolate;
+}
+
+.cls-2,
+.cls-7 {
+    fill: #fff;
+}
+
+.cls-7 {
+    font-family: CasinoFlat-Regular, 'Casino Flat';
+    font-size: 36px;
+}
+
+.cls-3 {
+    fill: url(#radial-gradient);
+}
+
+.cls-4 {
+    fill: #9d9d9c;
+}
+
+.cls-5 {
+    fill: #1d1d1b;
+}
+
+.cls-8 {
+    mix-blend-mode: multiply;
+}
+
+#chip_start {
+    width: 200px;
+    box-shadow: #1d1d1b;
+}
