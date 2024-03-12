@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
@@ -13,11 +14,10 @@ scene.add( light );
 
 const controls = new OrbitControls( camera, renderer.domElement);
 controls.target.set(2,0,1);
-controls.autoRotate = true;
 controls.enableDamping = true;
 controls.dampingFactor = 0.05;
 
-camera.position.set(2,1,6);
+camera.position.set(2,1,8);
 controls.update();
 
 light.position.set(2,3,2);
@@ -36,6 +36,16 @@ loader.load('Models/PCTest/a_personal_computer.glb', function ( gltf ) {
 
 });
 
+controls.update();
+
+window.addEventListener( 'resize', onWindowResize );
+
+function onWindowResize() {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    labelRenderer.setSize(window.innerWidth, window.innerHeight);
+}
 
 function animate() {
     requestAnimationFrame( animate );
