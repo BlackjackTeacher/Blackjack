@@ -43,10 +43,10 @@ header {
     z-index: 1;
 }
 
-.cls-1 {
+#Logo .cls-1 {
     transition-duration: .4s;
     transition-timing-function: ease;
-    fill: rgb(230, 230, 230);
+    fill: rgba(230, 230, 230, 1.00);
 }
 
 #Logo:hover .cls-1 {
@@ -79,7 +79,7 @@ header {
 
 .nav-main ul li a {
     font-size: 20px;
-    color: rgba(230, 230, 230, 1.00);
+    color: rgb(230, 230, 230);
     text-transform: uppercase;
     text-decoration: none;
     transition-duration: .4s;
@@ -140,7 +140,7 @@ header {
 }
 
 .icon-header:hover .menui {
-    background-color: rgba(200, 200, 200, 1.00);
+    background-color: rgb(200, 200, 200, 1.00);
 }
 
 @media (min-width: 768px) {

@@ -5,5 +5,171 @@
     justify-content: center;
     text-align: center;
     height: 100vh;
-    background: radial-gradient(rgba(255, 0, 0, 1), rgba(75, 0, 0, 1))
+    background-color: rgba(0, 0, 0, .25);
+    background-image: url("/img/main_background.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-blend-mode: overlay;
+}
+
+#Banner {
+    display: flex;
+    align-items: center;
+    height: 200px;
+    position: sticky;
+    z-index: 1;
+}
+
+#Banner .cls-1,
+#Banner .cls-2,
+#Banner .cls-3,
+#Banner .cls-4 {
+    fill: none;
+}
+
+#Banner .cls-1,
+#Banner .cls-2,
+#Banner .cls-5,
+#Banner .cls-6,
+#Banner .cls-7,
+#Banner .cls-8,
+#Banner .cls-9,
+#Banner .cls-10,
+#Banner .cls-11 {
+    stroke-width: 18px;
+}
+
+#Banner .cls-1,
+#Banner .cls-2,
+#Banner .cls-5,
+#Banner .cls-6,
+#Banner .cls-7,
+#Banner .cls-8,
+#Banner .cls-10,
+#Banner .cls-11 {
+    stroke: #55a;
+}
+
+#Banner .cls-12 {
+    fill: url(#Unbenannter_Verlauf_6);
+}
+
+#Banner .cls-12,
+#Banner .cls-13,
+#Banner .cls-14,
+#Banner .cls-3,
+#Banner .cls-15,
+#Banner .cls-16,
+#Banner .cls-17,
+#Banner .cls-18 {
+    stroke-width: 0px;
+}
+
+#Banner .cls-13,
+#Banner .cls-5 {
+    fill: #000;
+}
+
+#Banner .cls-14,
+#Banner .cls-8 {
+    fill: #f55;
+}
+
+#Banner .cls-2,
+#Banner .cls-5,
+#Banner .cls-6,
+#Banner .cls-8,
+#Banner .cls-10,
+#Banner .cls-11 {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+#Banner .cls-19 {
+    clip-path: url(#clippath-2);
+}
+
+#Banner .cls-20 {
+    letter-spacing: 0em;
+}
+
+#Banner .cls-21 {
+    filter: url(#drop-shadow-1);
+}
+
+#Banner .cls-22 {
+    clip-path: url(#clippath-1);
+}
+
+#Banner .cls-4 {
+    stroke: #967900;
+    stroke-miterlimit: 10;
+    stroke-width: 8.12px;
+}
+
+#Banner .cls-23 {
+    letter-spacing: -.03em;
+}
+
+#Banner .cls-24 {
+    letter-spacing: .01em;
+}
+
+#Banner .cls-25 {
+    letter-spacing: .02em;
+}
+
+#Banner .cls-6,
+#Banner .cls-7,
+#Banner .cls-15 {
+    fill: #ff5;
+}
+
+#Banner .cls-26 {
+    filter: url(#drop-shadow-2);
+}
+
+#Banner .cls-27 {
+    clip-path: url(#clippath);
+}
+
+#Banner .cls-28 {
+    stroke-width: 1px;
+}
+
+#Banner .cls-28,
+#Banner .cls-9 {
+    stroke: #000;
+}
+
+#Banner .cls-28,
+#Banner .cls-9,
+#Banner .cls-10,
+#Banner .cls-16 {
+    fill: #fff;
+}
+
+#Banner .cls-11,
+#Banner .cls-17 {
+    fill: #55a;
+}
+
+#Banner .cls-29 {
+    font-family: CopperplateGothic-Light, 'Copperplate Gothic Light';
+    font-size: 72px;
+    font-weight: 300;
+}
+
+#Banner .cls-29,
+#Banner .cls-30 {
+    fill: #e6e6e6;
+}
+
+#Banner .cls-30 {
+    font-family: CasinoFlat-Regular, 'Casino Flat';
+    font-size: 120px;
+}
+
+#Banner .cls-18 {
+    fill: #fcee21;
 }
