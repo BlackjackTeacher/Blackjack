@@ -15,9 +15,7 @@
 #Banner {
     display: flex;
     align-items: center;
-    height: 300px;
-    position: sticky;
-    z-index: 1;
+    height: 15em;
 }
 
 #Banner .cls-1 {
@@ -166,4 +164,60 @@
 
 #Banner .cls-8 {
     fill: #fcee21;
+}
+
+.menu {
+    margin-top: 3em;
+}
+
+#Start {
+    height: 10em;
+    transition-duration: .2s;
+    transition-timing-function: ease;
+}
+
+#Start .cls-6:hover {
+    cursor: pointer;
+}
+
+#Start .cls-1 {
+    fill: url(#linear-gradient);
+}
+
+#Start .cls-1,
+#Start .cls-2,
+#Start .cls-3,
+#Start .cls-4,
+#Start .cls-5 {
+    stroke-width: 0px;
+}
+
+#Start .cls-6 {
+    isolation: isolate;
+}
+
+#Start .cls-7 {
+    font-family: CasinoFlat-Regular, 'Casino Flat';
+    font-size: 36px;
+}
+
+#Start .cls-7,
+#Start .cls-5 {
+    fill: #fff;
+}
+
+#Start .cls-2 {
+    fill: #9d9d9c;
+}
+
+#Start .cls-3 {
+    fill: url(#radial-gradient);
+}
+
+#Start .cls-4 {
+    fill: #1d1d1b;
+}
+
+#Start .cls-8 {
+    mix-blend-mode: multiply;
 }
