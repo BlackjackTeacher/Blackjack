@@ -3,8 +3,8 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 // Test
-const mouse = new THREE.Vector2(1, 1);
 const raycaster = new THREE.Raycaster();
+const mouse = new THREE.Vector2(1, 1);
 
 // Model vars
 var Coke;
@@ -99,20 +99,27 @@ function onMouseMove(event) {
 
 }
 
+// Raycaster Test
+function render(){
+    
+    raycaster.setFromCamera(mouse, camera);
+    if (Coke) {
+        const intersection = raycaster.intersectObject(Coke, true);
+        if (intersection.length > 0) {
+            Coke.position.set(2, 0.5, 1);
+        } else {
+            Coke.position.set(2, -0.5, 1);
+        }
+    }
+}
+
+window.addEventListener('pointermove', onMouseMove);
+
 // Animation Loop
 function animate() {
 
-    raycaster.setFromCamera(mouse, camera);
     requestAnimationFrame(animate);
-
-
-    if (Coke) {
-    const intersection = raycaster.intersectObject(Coke, true);
-        if (intersection.length > 0) {
-            var interCoke = intersection[0].Coke;
-            interCoke.position.set(2, 0.5, 3)
-        }
-    }
+    window.requestAnimationFrame(render);   
 
     renderer.render(scene, camera, light);
 
