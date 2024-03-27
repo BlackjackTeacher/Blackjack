@@ -1,7 +1,10 @@
 import * as THREE from 'three';
 
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+// Test
+const mouse = new THREE.Vector2(1, 1);
+const raycaster = new THREE.Raycaster();
 
 // Model vars
 var Coke;
@@ -16,21 +19,12 @@ scene.background = color1;
 
 // Camera
 const camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.1, 1000);
+camera.position.set(2, 1, 6);
 
 // Renderer
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
-
-// Controls
-const controls = new OrbitControls( camera, renderer.domElement);
-controls.target.set(2,0,1);
-controls.enableDamping = true;
-controls.dampingFactor = 0.05;
-controls.enablePan = false;
-
-camera.position.set(2,1,8);
-controls.update();
 
 // Light
 const light = new THREE.SpotLight(0xffffff);
@@ -46,10 +40,10 @@ light2.angle = -90;
 // GLTF Loader & Models
 const loader = new GLTFLoader();
 
-loader.load('Models/PCTest/a_personal_computer.glb', function (gltf) {
-    
+loader.load('Models/PCTest/a_personal_computer.glb', (gltf) => {
+
     pc = gltf.scene;
-    pc.position.set(0,-1,0);
+    pc.position.set(0, -1, 0);
     scene.add(pc);
 
 }, undefined, function (error) {
@@ -58,21 +52,21 @@ loader.load('Models/PCTest/a_personal_computer.glb', function (gltf) {
 
 });
 
-loader.load('Models/CokeCan/coke_can.glb', function (gltf) {
-    
+loader.load('Models/CokeCan/coke_can.glb', (gltf) => {
+
     Coke = gltf.scene;
-    Coke.position.set(2,-0.5,1);
+    Coke.position.set(2, -0.5, 1);
     Coke.rotation.set(3.14, 0.785, 3.14);
     Coke.scale.set(0.5, 0.5, 0.5);
     scene.add(Coke);
 
 }, undefined, function (error) {
-    
+
     console.error; ('ICH DARF EINFACH KEIN COLA TRINKEN')
 
 });
 
-loader.load('Models/Karten/Karte_Test.glb', function (gltf) {
+loader.load('Models/Karten/Karte_Test.glb', (gltf) => {
 
     Karte = gltf.scene;
     Karte.position.set(3, 0, 1);
@@ -86,10 +80,8 @@ loader.load('Models/Karten/Karte_Test.glb', function (gltf) {
 
 })
 
-controls.update();
-
 // Window automatic resize
-window.addEventListener( 'resize', onWindowResize );
+window.addEventListener('resize', onWindowResize);
 
 function onWindowResize() {
     camera.aspect = window.innerWidth / window.innerHeight;
@@ -97,21 +89,64 @@ function onWindowResize() {
     renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
+// Mausbewegung für Mesh-Interaktionen verfolgen
+function onMouseMove(event) {
+
+    event.preventDefault();
+
+    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+    mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
+
+}
+
 // Animation Loop
 function animate() {
-    
+
+    raycaster.setFromCamera(mouse, camera);
     requestAnimationFrame(animate);
-    controls.update();
+
+
+    if (Coke) {
+    const intersection = raycaster.intersectObject(Coke, true);
+        if (intersection.length > 0) {
+            var interCoke = intersection[0].Coke;
+            interCoke.position.set(2, 0.5, 3)
+        }
+    }
+
     renderer.render(scene, camera, light);
-    
-    if(Karte){
-    Karte.rotation.y += 0.05;
-    Karte.rotation.z += 0.05;
-    }
-    
-    if(Coke){
-    Coke.rotation.y += 0.01;
-    }
 
 }
 animate();
+
+/*Logik vom Spiel
+
+    Karten unterscheiden
+    Kartendeck Logik(bei einem deck kann eine karte nicht 2 mal vorkommen)
+    Buttons den aktionen zuweisen
+
+*/
+
+/*Doku was das spiel machen soll:
+
+    Spiel start
+
+    Karten werden gemischt und ausgeteilt
+        Spieler bekommt eine Karte
+        Dealer bekommt eine Karte
+        Spieler bekommt eine Karte
+        Dealer bekommt verdeckt eine Karte
+
+    Check nach Blackjack
+        falls nötig auch bei Dealer
+            falls nötig spieler nach insurance fragen
+    
+    Erste Spieler aktion
+        Spieler entscheidet zwischen Hit/Stand(/Double/Split)
+            Aktion wird ausgeführt
+        Loop bis Punktzahl auf allen händen >= 21 oder Stand auf alle hände zutrifft
+    
+    Spiel zuende
+        wiederhole Spiel
+
+*/
