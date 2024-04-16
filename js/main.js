@@ -8,7 +8,7 @@ const mouse = new THREE.Vector2(1, 1);
 
 // Model vars
 var Coke;
-var pc;
+var Tisch;
 var Karte;
 
 // Scene
@@ -19,7 +19,8 @@ scene.background = color1;
 
 // Camera
 const camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.position.set(2, 1, 6);
+camera.position.set(0, 4, 4.5);
+camera.rotateX(-1.3);
 
 // Renderer
 const renderer = new THREE.WebGLRenderer();
@@ -29,7 +30,9 @@ document.body.appendChild(renderer.domElement);
 // Light
 const light = new THREE.SpotLight(0xffffff);
 const light2 = new THREE.SpotLight(0xffffff);
-scene.add(light, light2);
+const lightTest = new THREE.AmbientLight;
+scene.add(light, light2, lightTest);
+lightTest.intensity = 2;
 light.position.set(2, 3, 2);
 light2.position.set(2, -3, 2);
 light.intensity = 25;
@@ -40,11 +43,12 @@ light2.angle = -90;
 // GLTF Loader & Models
 const loader = new GLTFLoader();
 
-loader.load('Models/PCTest/a_personal_computer.glb', (gltf) => {
+loader.load('Models/Tischplatte/BJ_Tischplatte.glb', (gltf) => {
 
-    pc = gltf.scene;
-    pc.position.set(0, -1, 0);
-    scene.add(pc);
+    Tisch = gltf.scene;
+    Tisch.position.set(0, -1, -2);
+    Tisch.scale.set(1.23, 1, 1.23);
+    scene.add(Tisch);
 
 }, undefined, function (error) {
 
@@ -109,6 +113,7 @@ function render(){
             Coke.position.set(2, 0.5, 1);
         } else {
             Coke.position.set(2, -0.5, 1);
+
         }
     }
 }
