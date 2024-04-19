@@ -8,6 +8,7 @@ const mouse = new THREE.Vector2(1, 1);
 
 // Model vars
 var Coke;
+var CokeUp = false;
 var Tisch;
 var Karte;
 
@@ -70,11 +71,10 @@ loader.load('Models/CokeCan/coke_can.glb', (gltf) => {
 
 });
 
-loader.load('Models/Karten/Karte_Test.glb', (gltf) => {
+loader.load('Models/Karten/Karte_Deck.glb', (gltf) => {
 
     Karte = gltf.scene;
     Karte.position.set(3, 0, 1);
-    Karte.rotation.set(1.57, 0.785, 3.14);
     Karte.scale.set(5, 5, 5);
     scene.add(Karte);
 
@@ -104,16 +104,15 @@ function onMouseMove(event) {
 }
 
 // Raycaster Test
-function render(){
-    
+function render() {
+
     raycaster.setFromCamera(mouse, camera);
     if (Coke) {
         const intersection = raycaster.intersectObject(Coke, true);
         if (intersection.length > 0) {
-            Coke.position.set(2, 0.5, 1);
+            Coke.position.set(0, 0, 1);
         } else {
-            Coke.position.set(2, -0.5, 1);
-
+            Coke.position.set(2, 0, 1);
         }
     }
 }
@@ -124,7 +123,7 @@ window.addEventListener('pointermove', onMouseMove);
 function animate() {
 
     requestAnimationFrame(animate);
-    window.requestAnimationFrame(render);   
+    window.requestAnimationFrame(render);
 
     renderer.render(scene, camera, light);
 
