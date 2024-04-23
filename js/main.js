@@ -8,9 +8,12 @@ const mouse = new THREE.Vector2(1, 1);
 
 // Model vars
 var Coke;
-var CokeUp = false;
 var Tisch;
-var Karte;
+var Deck;
+const clubsGroup = new THREE.Group();
+const spadesGroup = new THREE.Group();
+const heartsGroup = new THREE.Group()
+const diamondsGroup = new THREE.Group()
 
 // Scene
 const scene = new THREE.Scene();
@@ -46,6 +49,7 @@ const loader = new GLTFLoader();
 
 loader.load('Models/Tischplatte/BJ_Tischplatte.glb', (gltf) => {
 
+    // initialisierung des Tisch Models + scale & pos
     Tisch = gltf.scene;
     Tisch.position.set(0, -1, -2);
     Tisch.scale.set(1.23, 1, 1.23);
@@ -73,10 +77,13 @@ loader.load('Models/CokeCan/coke_can.glb', (gltf) => {
 
 loader.load('Models/Karten/Karte_Deck.glb', (gltf) => {
 
-    Karte = gltf.scene;
-    Karte.position.set(3, 0, 1);
-    Karte.scale.set(5, 5, 5);
-    scene.add(Karte);
+    // initialisierung des Kartendeck Models + scale & pos
+    Deck = gltf.scene;
+    Deck.position.set(3, 0, 1);
+    Deck.scale.set(7.5, 7.5, 7.5);
+    scene.add(Deck);
+    
+
 
 }, undefined, function (error) {
 
@@ -107,7 +114,7 @@ function onMouseMove(event) {
 function render() {
 
     raycaster.setFromCamera(mouse, camera);
-    if (Coke) {
+    if (Coke && Deck) {
         const intersection = raycaster.intersectObject(Coke, true);
         if (intersection.length > 0) {
             Coke.position.set(0, 0, 1);
@@ -115,6 +122,11 @@ function render() {
             Coke.position.set(2, 0, 1);
         }
     }
+
+    if (Deck){
+        clubsGroup.rotateX(0.1);
+    }
+
 }
 
 window.addEventListener('pointermove', onMouseMove);
