@@ -9,10 +9,6 @@ const mouse = new THREE.Vector2(1, 1);
 // Model vars
 var Tisch;
 var Deck;
-const clubsGroup = new THREE.Group();
-const spadesGroup = new THREE.Group();
-const heartsGroup = new THREE.Group();
-const diamondsGroup = new THREE.Group();
 
 // Scene
 const scene = new THREE.Scene();
