@@ -220,3 +220,19 @@
 #Start .cls-8 {
     mix-blend-mode: multiply;
 }
+
+@media (min-width: 768px) {
+    #Banner {
+        width: 600px;
+    }
+}
+
+@media (min-width: 1366px) {
+    #Banner {
+        width: 800px;
+    }
+
+    #Start {
+        width: 175px;
+    }
+}
