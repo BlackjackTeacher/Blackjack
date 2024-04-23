@@ -1,0 +1,24 @@
+@font-face {
+	font-family: 'Casino';
+	src: url('casino/CasinoRegular.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Casino 3D';
+	src: url('casino/Casino3DRegular.ttf') format('truetype');
+}
+@font-face {
+	font-family: "Casino 3D Filled";
+	src: url('casino/Casino3DFilledRegular.ttf') format('truetype');
+}
+@font-face {
+	font-family: "Casino Shadow";
+	src: url('casino/CasinoShadowRegular.ttf') format('truetype');
+}
+@font-face {
+	font-family: "Casino Flat";
+	src: url('casino/CasinoFlatRegular.ttf') format('truetype');
+}
+@font-face {
+	font-family: "Vollkorn SC Regular";
+	src: url('Vollkorn/VollkornSC-Regular.ttf');
+}
