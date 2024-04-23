@@ -7,13 +7,12 @@ const raycaster = new THREE.Raycaster();
 const mouse = new THREE.Vector2(1, 1);
 
 // Model vars
-var Coke;
 var Tisch;
 var Deck;
 const clubsGroup = new THREE.Group();
 const spadesGroup = new THREE.Group();
-const heartsGroup = new THREE.Group()
-const diamondsGroup = new THREE.Group()
+const heartsGroup = new THREE.Group();
+const diamondsGroup = new THREE.Group();
 
 // Scene
 const scene = new THREE.Scene();
@@ -22,7 +21,7 @@ const color1 = new THREE.Color(0x00000);
 scene.background = color1;
 
 // Camera
-const camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 camera.position.set(0, 4, 4.5);
 camera.rotateX(-1.3);
 
@@ -52,7 +51,7 @@ loader.load('Models/Tischplatte/BJ_Tischplatte.glb', (gltf) => {
     // initialisierung des Tisch Models + scale & pos
     Tisch = gltf.scene;
     Tisch.position.set(0, -1, -2);
-    Tisch.scale.set(1.23, 1, 1.23);
+    Tisch.scale.set(1.25, 1, 1.25);
     scene.add(Tisch);
 
 }, undefined, function (error) {
@@ -61,28 +60,13 @@ loader.load('Models/Tischplatte/BJ_Tischplatte.glb', (gltf) => {
 
 });
 
-loader.load('Models/CokeCan/coke_can.glb', (gltf) => {
-
-    Coke = gltf.scene;
-    Coke.position.set(2, -0.5, 1);
-    Coke.rotation.set(3.14, 0.785, 3.14);
-    Coke.scale.set(0.5, 0.5, 0.5);
-    scene.add(Coke);
-
-}, undefined, function (error) {
-
-    console.error; ('ICH DARF EINFACH KEIN COLA TRINKEN')
-
-});
-
 loader.load('Models/Karten/Karte_Deck.glb', (gltf) => {
 
     // initialisierung des Kartendeck Models + scale & pos
     Deck = gltf.scene;
-    Deck.position.set(3, 0, 1);
-    Deck.scale.set(7.5, 7.5, 7.5);
+    Deck.position.set(0, 0, 2);
     scene.add(Deck);
-    
+
     // einzel Karteninitialisierung
     const aceOfClubs = scene.getObjectByName('Card_Ace_Clubs');
     const twoOfClubs = scene.getObjectByName('Card_Two_Clubs');
@@ -137,10 +121,8 @@ loader.load('Models/Karten/Karte_Deck.glb', (gltf) => {
     const queenOfDiamonds = scene.getObjectByName('Card_Queen_Diamonds');
     const kingOfDiamonds = scene.getObjectByName('Card_King_Diamonds');
 
-    clubsGroup.add(aceOfClubs, twoOfClubs, threeOfClubs, fourOfClubs, fiveOfClubs, sixOfClubs, sevenOfClubs, eightOfClubs, nineOfClubs, tenOfClubs, jackOfClubs, queenOfClubs, kingOfClubs)
-    spadesGroup.add(aceOfSpades, twoOfSpades, threeOfSpades, fourOfSpades, fiveOfSpades, sixOfSpades, sevenOfSpades, eightOfSpades, nineOfSpades, tenOfSpades, jackOfSpades, queenOfSpades, kingOfSpades)
-    heartsGroup.add(aceOfHearts, twoOfHearts, threeOfHearts, fourOfHearts, fiveOfHearts, sixOfHearts, sevenOfHearts, eightOfHearts, nineOfHearts, tenOfHearts, jackOfHearts, queenOfHearts, kingOfHearts)
-    diamondsGroup.add(aceOfDiamonds, twoOfDiamonds, threeOfDiamonds, fourOfDiamonds, fiveOfDiamonds, sixOfDiamonds, sevenOfDiamonds, eightOfDiamonds, nineOfDiamonds, tenOfDiamonds, jackOfDiamonds, queenOfDiamonds, kingOfDiamonds)
+    
+    aceOfSpades.position.set(0,0.5,0);
 
 }, undefined, function (error) {
 
@@ -171,17 +153,8 @@ function onMouseMove(event) {
 function render() {
 
     raycaster.setFromCamera(mouse, camera);
-    if (Coke && Deck) {
-        const intersection = raycaster.intersectObject(Coke, true);
-        if (intersection.length > 0) {
-            Coke.position.set(0, 0, 1);
-        } else {
-            Coke.position.set(2, 0, 1);
-        }
-    }
 
-    if (Deck){
-        clubsGroup.rotateX(0.1);
+    if (Deck) {
     }
 
 }
