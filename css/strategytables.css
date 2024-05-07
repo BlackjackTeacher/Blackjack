@@ -12,10 +12,6 @@
     background-attachment: fixed;
     background-blend-mode: overlay;
 }
-.strategytables {
-    display: inline-flex;
-    justify-content: center;
-}
 .strategytable {
     display: flex;
     flex-direction: column;
