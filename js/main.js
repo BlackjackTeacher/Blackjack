@@ -110,6 +110,7 @@ loader.load('Models/Tischplatte/BJ_Tischplatte.glb', (gltf) => {
 
 });
 
+if (Tisch) {
 loader.load('Models/Karten/aceOfClubs.glb', (gltf) => {
 
     aceOfClubs = gltf.scene;
@@ -123,6 +124,7 @@ loader.load('Models/Karten/aceOfClubs.glb', (gltf) => {
 });
 }
 
+if (aceOfClubs) {
 loader.load('Models/Karten/twoOfClubs.glb', (gltf) => {
 
     twoOfClubs = gltf.scene;
@@ -134,6 +136,7 @@ loader.load('Models/Karten/twoOfClubs.glb', (gltf) => {
 });
 }
 
+if (twoOfClubs) {
 loader.load('Models/Karten/threeOfClubs.glb', (gltf) => {
 
     threeOfClubs = gltf.scene;
@@ -145,6 +148,7 @@ loader.load('Models/Karten/threeOfClubs.glb', (gltf) => {
 });
 }
 
+if (threeOfClubs) {
 loader.load('Models/Karten/fourOfClubs.glb', (gltf) => {
 
     fourOfClubs = gltf.scene;
@@ -156,6 +160,7 @@ loader.load('Models/Karten/fourOfClubs.glb', (gltf) => {
 });
 }
 
+if (fourOfClubs) {
 loader.load('Models/Karten/fiveOfClubs.glb', (gltf) => {
 
     fiveOfClubs = gltf.scene;
@@ -167,6 +172,7 @@ loader.load('Models/Karten/fiveOfClubs.glb', (gltf) => {
 });
 }
 
+if (fiveOfClubs) {
 loader.load('Models/Karten/sixOfClubs.glb', (gltf) => {
 
     sixOfClubs = gltf.scene;
@@ -179,6 +185,7 @@ loader.load('Models/Karten/sixOfClubs.glb', (gltf) => {
 });
 }
 
+if (sixOfClubs) {
 loader.load('Models/Karten/sevenOfClubs.glb', (gltf) => {
 
     sevenOfClubs = gltf.scene;
@@ -191,6 +198,7 @@ loader.load('Models/Karten/sevenOfClubs.glb', (gltf) => {
 });
 }
 
+if (sevenOfClubs) {
 loader.load('Models/Karten/eightOfClubs.glb', (gltf) => {
 
     eightOfClubs = gltf.scene;
@@ -203,6 +211,7 @@ loader.load('Models/Karten/eightOfClubs.glb', (gltf) => {
 });
 }
 
+if (eightOfClubs) {
 loader.load('Models/Karten/nineOfClubs.glb', (gltf) => {
 
     nineOfClubs = gltf.scene;
@@ -215,6 +224,7 @@ loader.load('Models/Karten/nineOfClubs.glb', (gltf) => {
 });
 }
 
+if (nineOfClubs) {
 loader.load('Models/Karten/tenOfClubs.glb', (gltf) => {
 
     tenOfClubs = gltf.scene;
@@ -227,6 +237,7 @@ loader.load('Models/Karten/tenOfClubs.glb', (gltf) => {
 });
 }
 
+if (tenOfClubs) {
 loader.load('Models/Karten/jackOfClubs.glb', (gltf) => {
 
     jackOfClubs = gltf.scene;
@@ -239,6 +250,7 @@ loader.load('Models/Karten/jackOfClubs.glb', (gltf) => {
 });
 }
 
+if (jackOfClubs) {
 loader.load('Models/Karten/queenOfClubs.glb', (gltf) => {
 
     queenOfClubs = gltf.scene;
@@ -251,6 +263,7 @@ loader.load('Models/Karten/queenOfClubs.glb', (gltf) => {
 });
 }
 
+if (queenOfClubs) {
 loader.load('Models/Karten/kingOfClubs.glb', (gltf) => {
 
     kingOfClubs = gltf.scene;
