@@ -29,11 +29,16 @@ h1 {
 
 h2 {
     font-size: 24px;
-    margin: 20px auto 20px auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
+
 h3 {
     font-size: 16px;
-    margin: 10px auto 10px auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-decoration: underline;
+    font-weight: normal;
 }
 
 p {
