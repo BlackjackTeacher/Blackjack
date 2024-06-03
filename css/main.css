@@ -31,6 +31,10 @@ h2 {
     font-size: 24px;
     margin: 20px auto 20px auto;
 }
+h3 {
+    font-size: 16px;
+    margin: 10px auto 10px auto;
+}
 
 p {
     font-family: "Vollkorn SC Regular";
