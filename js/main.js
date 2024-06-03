@@ -263,6 +263,7 @@ loader.load('Models/Karten/kingOfClubs.glb', (gltf) => {
 });
 }
 
+if (kingOfClubs) {
 loader.load('Models/Karten/aceOfSpades.glb', (gltf) => {
 
     aceOfSpades = gltf.scene;
@@ -273,6 +274,7 @@ loader.load('Models/Karten/aceOfSpades.glb', (gltf) => {
 });
 }
 
+if (aceOfSpades) {
 loader.load('Models/Karten/twoOfSpades.glb', (gltf) => {
 
     twoOfSpades = gltf.scene;
@@ -283,6 +285,7 @@ loader.load('Models/Karten/twoOfSpades.glb', (gltf) => {
 });
 }
 
+if (twoOfSpades) {
 loader.load('Models/Karten/threeOfSpades.glb', (gltf) => {
 
     threeOfSpades = gltf.scene;
@@ -293,6 +296,7 @@ loader.load('Models/Karten/threeOfSpades.glb', (gltf) => {
 });
 }
 
+if (threeOfSpades) {
 loader.load('Models/Karten/fourOfSpades.glb', (gltf) => {
 
     fourOfSpades = gltf.scene;
@@ -303,6 +307,7 @@ loader.load('Models/Karten/fourOfSpades.glb', (gltf) => {
 });
 }
 
+if (fourOfSpades) {
 loader.load('Models/Karten/fiveOfSpades.glb', (gltf) => {
 
     fiveOfSpades = gltf.scene;
@@ -313,6 +318,7 @@ loader.load('Models/Karten/fiveOfSpades.glb', (gltf) => {
 });
 }
 
+if (fiveOfSpades) {
 loader.load('Models/Karten/sixOfSpades.glb', (gltf) => {
 
     sixOfSpades = gltf.scene;
@@ -323,6 +329,7 @@ loader.load('Models/Karten/sixOfSpades.glb', (gltf) => {
 });
 }
 
+if (sixOfSpades) {
 loader.load('Models/Karten/sevenOfSpades.glb', (gltf) => {
 
     sevenOfSpades = gltf.scene;
@@ -333,6 +340,7 @@ loader.load('Models/Karten/sevenOfSpades.glb', (gltf) => {
 });
 }
 
+if (sevenOfSpades) {
 loader.load('Models/Karten/eightOfSpades.glb', (gltf) => {
 
     eightOfSpades = gltf.scene;
@@ -343,6 +351,7 @@ loader.load('Models/Karten/eightOfSpades.glb', (gltf) => {
 });
 }
 
+if (eightOfSpades) {
 loader.load('Models/Karten/nineOfSpades.glb', (gltf) => {
 
     nineOfSpades = gltf.scene;
@@ -353,6 +362,7 @@ loader.load('Models/Karten/nineOfSpades.glb', (gltf) => {
 });
 }
 
+if (nineOfSpades) {
 loader.load('Models/Karten/tenOfSpades.glb', (gltf) => {
 
     tenOfSpades = gltf.scene;
@@ -363,6 +373,7 @@ loader.load('Models/Karten/tenOfSpades.glb', (gltf) => {
 });
 }
 
+if (tenOfSpades) {
 loader.load('Models/Karten/jackOfSpades.glb', (gltf) => {
 
     jackOfSpades = gltf.scene;
@@ -373,6 +384,7 @@ loader.load('Models/Karten/jackOfSpades.glb', (gltf) => {
 });
 }
 
+if (jackOfSpades) {
 loader.load('Models/Karten/queenOfSpades.glb', (gltf) => {
 
     queenOfSpades = gltf.scene;
@@ -383,6 +395,7 @@ loader.load('Models/Karten/queenOfSpades.glb', (gltf) => {
 });
 }
 
+if (queenOfSpades) {
 loader.load('Models/Karten/kingOfSpades.glb', (gltf) => {
 
     kingOfSpades = gltf.scene;
@@ -393,6 +406,7 @@ loader.load('Models/Karten/kingOfSpades.glb', (gltf) => {
 });
 }
 
+if (kingOfSpades) {
 loader.load('Models/Karten/aceOfHearts.glb', (gltf) => {
 
     aceOfHearts = gltf.scene;
@@ -403,6 +417,7 @@ loader.load('Models/Karten/aceOfHearts.glb', (gltf) => {
 });
 }
 
+if (aceOfHearts) {
 loader.load('Models/Karten/twoOfHearts.glb', (gltf) => {
 
     twoOfHearts = gltf.scene;
@@ -413,6 +428,7 @@ loader.load('Models/Karten/twoOfHearts.glb', (gltf) => {
 });
 }
 
+if (twoOfHearts) {
 loader.load('Models/Karten/threeOfHearts.glb', (gltf) => {
 
     threeOfHearts = gltf.scene;
@@ -423,6 +439,7 @@ loader.load('Models/Karten/threeOfHearts.glb', (gltf) => {
 });
 }
 
+if (threeOfHearts) {
 loader.load('Models/Karten/fourOfHearts.glb', (gltf) => {
 
     fourOfHearts = gltf.scene;
@@ -433,6 +450,7 @@ loader.load('Models/Karten/fourOfHearts.glb', (gltf) => {
 });
 }
 
+if (fourOfHearts) {
 loader.load('Models/Karten/fiveOfHearts.glb', (gltf) => {
 
     fiveOfHearts = gltf.scene;
@@ -443,6 +461,7 @@ loader.load('Models/Karten/fiveOfHearts.glb', (gltf) => {
 });
 }
 
+if (fiveOfHearts) {
 loader.load('Models/Karten/sixOfHearts.glb', (gltf) => {
 
     sixOfHearts = gltf.scene;
@@ -453,6 +472,7 @@ loader.load('Models/Karten/sixOfHearts.glb', (gltf) => {
 });
 }
 
+if (sixOfHearts) {
 loader.load('Models/Karten/sevenOfHearts.glb', (gltf) => {
 
     sevenOfHearts = gltf.scene;
@@ -463,6 +483,7 @@ loader.load('Models/Karten/sevenOfHearts.glb', (gltf) => {
 });
 }
 
+if (sevenOfHearts) {
 loader.load('Models/Karten/eightOfHearts.glb', (gltf) => {
 
     eightOfHearts = gltf.scene;
@@ -473,6 +494,7 @@ loader.load('Models/Karten/eightOfHearts.glb', (gltf) => {
 });
 }
 
+if (eightOfHearts) {
 loader.load('Models/Karten/nineOfHearts.glb', (gltf) => {
 
     nineOfHearts = gltf.scene;
@@ -483,6 +505,7 @@ loader.load('Models/Karten/nineOfHearts.glb', (gltf) => {
 });
 }
 
+if (nineOfHearts) {
 loader.load('Models/Karten/tenOfHearts.glb', (gltf) => {
 
     tenOfHearts = gltf.scene;
@@ -493,6 +516,7 @@ loader.load('Models/Karten/tenOfHearts.glb', (gltf) => {
 });
 }
 
+if (tenOfHearts) {
 loader.load('Models/Karten/jackOfHearts.glb', (gltf) => {
 
     jackOfHearts = gltf.scene;
@@ -503,6 +527,7 @@ loader.load('Models/Karten/jackOfHearts.glb', (gltf) => {
 });
 }
 
+if (jackOfHearts) {
 loader.load('Models/Karten/queenOfHearts.glb', (gltf) => {
 
     queenOfHearts = gltf.scene;
@@ -513,6 +538,7 @@ loader.load('Models/Karten/queenOfHearts.glb', (gltf) => {
 });
 }
 
+if (queenOfHearts) {
 loader.load('Models/Karten/kingOfHearts.glb', (gltf) => {
 
     kingOfHearts = gltf.scene;
