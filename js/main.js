@@ -7,62 +7,68 @@ const raycaster = new THREE.Raycaster();
 const mouse = new THREE.Vector2(1, 1);
 
 // Model vars
+var test = 0;
 var Tisch;
+var deck;
 var Deck;
 
 // Deck
-var aceOfClubs;
-var twoOfClubs;
-var threeOfClubs;
-var fourOfClubs;
-var fiveOfClubs;
-var sixOfClubs;
-var sevenOfClubs;
-var eightOfClubs;
-var nineOfClubs;
-var tenOfClubs;
-var jackOfClubs;
-var queenOfClubs;
-var kingOfClubs;
-var aceOfSpades;
-var twoOfSpades;
-var threeOfSpades;
-var fourOfSpades;
-var fiveOfSpades;
-var sixOfSpades;
-var sevenOfSpades;
-var eightOfSpades;
-var nineOfSpades;
-var tenOfSpades;
-var jackOfSpades;
-var queenOfSpades;
-var kingOfSpades;
-var aceOfHearts;
-var twoOfHearts;
-var threeOfHearts;
-var fourOfHearts;
-var fiveOfHearts;
-var sixOfHearts;
-var sevenOfHearts;
-var eightOfHearts;
-var nineOfHearts;
-var tenOfHearts;
-var jackOfHearts;
-var queenOfHearts;
-var kingOfHearts;
-var aceOfDiamonds;
-var twoOfDiamonds;
-var threeOfDiamonds;
-var fourOfDiamonds;
-var fiveOfDiamonds;
-var sixOfDiamonds;
-var sevenOfDiamonds;
-var eightOfDiamonds;
-var nineOfDiamonds;
-var tenOfDiamonds;
-var jackOfDiamonds;
-var queenOfDiamonds;
-var kingOfDiamonds;
+const gltfURLs = [
+    'Models/Karten/aceOfClubs.glb',
+    'Models/Karten/twoOfClubs.glb',
+    'Models/Karten/threeOfClubs.glb',
+    'Models/Karten/fourOfClubs.glb',
+    'Models/Karten/fiveOfClubs.glb',
+    'Models/Karten/sixOfClubs.glb',
+    'Models/Karten/sevenOfClubs.glb',
+    'Models/Karten/eightOfClubs.glb',
+    'Models/Karten/nineOfClubs.glb',
+    'Models/Karten/tenOfClubs.glb',
+    'Models/Karten/jackOfClubs.glb',
+    'Models/Karten/queenOfClubs.glb',
+    'Models/Karten/kingOfClubs.glb',
+    'Models/Karten/aceOfSpades.glb',
+    'Models/Karten/twoOfSpades.glb',
+    'Models/Karten/threeOfSpades.glb',
+    'Models/Karten/fourOfSpades.glb',
+    'Models/Karten/fiveOfSpades.glb',
+    'Models/Karten/sixOfSpades.glb',
+    'Models/Karten/sevenOfSpades.glb',
+    'Models/Karten/eightOfSpades.glb',
+    'Models/Karten/nineOfSpades.glb',
+    'Models/Karten/tenOfSpades.glb',
+    'Models/Karten/jackOfSpades.glb',
+    'Models/Karten/queenOfSpades.glb',
+    'Models/Karten/kingOfSpades.glb',
+    'Models/Karten/aceOfHearts.glb',
+    'Models/Karten/twoOfHearts.glb',
+    'Models/Karten/threeOfHearts.glb',
+    'Models/Karten/fourOfHearts.glb',
+    'Models/Karten/fiveOfHearts.glb',
+    'Models/Karten/sixOfHearts.glb',
+    'Models/Karten/sevenOfHearts.glb',
+    'Models/Karten/eightOfHearts.glb',
+    'Models/Karten/nineOfHearts.glb',
+    'Models/Karten/tenOfHearts.glb',
+    'Models/Karten/jackOfHearts.glb',
+    'Models/Karten/queenOfHearts.glb',
+    'Models/Karten/kingOfHearts.glb',
+    'Models/Karten/aceOfDiamonds.glb',
+    'Models/Karten/twoOfDiamonds.glb',
+    'Models/Karten/threeOfDiamonds.glb',
+    'Models/Karten/fourOfDiamonds.glb',
+    'Models/Karten/fiveOfDiamonds.glb',
+    'Models/Karten/sixOfDiamonds.glb',
+    'Models/Karten/sevenOfDiamonds.glb',
+    'Models/Karten/eightOfDiamonds.glb',
+    'Models/Karten/nineOfDiamonds.glb',
+    'Models/Karten/tenOfDiamonds.glb',
+    'Models/Karten/jackOfDiamonds.glb',
+    'Models/Karten/queenOfDiamonds.glb',
+    'Models/Karten/kingOfDiamonds.glb',
+]
+
+const batchSize = 2;
 
 // Scene
 const scene = new THREE.Scene();
@@ -93,6 +99,7 @@ light2.intensity = 25
 light.angle = 90;
 light2.angle = -90;
 
+
 // GLTF Loader & Models
 const loader = new GLTFLoader();
 
@@ -106,604 +113,64 @@ loader.load('Models/Tischplatte/BJ_Tischplatte.glb', (gltf) => {
 
 }, undefined, function (error) {
 
-    console.error; ('Wir haben einen Brief gekriegt, ich will mich umbringen');
+    console.error('Wir haben einen Brief gekriegt, ich will mich umbringen');
 
 });
 
-if (Tisch) {
-loader.load('Models/Karten/aceOfClubs.glb', (gltf) => {
+loader.load('Models/Karten/Karte_Deck.glb', (gltf) => {
 
-    aceOfClubs = gltf.scene;
-    scene.add(aceOfClubs);
-
-    aceOfClubs.position.set(0, 0, 2)
+    deck = gltf.scene;
+    deck.position.set(0,0.5,2.5);
+    scene.add(deck);
 
 }, undefined, function (error) {
-    console.error('Ich glaub mir ist ein aceOfClubs runtergefallen...')
+
+    console.error('Fickt euch doch alle');
 
 });
-}
 
-if (aceOfClubs) {
-loader.load('Models/Karten/twoOfClubs.glb', (gltf) => {
-
-    twoOfClubs = gltf.scene;
-    scene.add(twoOfClubs);
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein twoOfClubs runtergefallen...')
-
-});
-}
-
-if (twoOfClubs) {
-loader.load('Models/Karten/threeOfClubs.glb', (gltf) => {
-
-    threeOfClubs = gltf.scene;
-    scene.add(threeOfClubs);
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein threeOfClubs runtergefallen...')
-
-});
-}
-
-if (threeOfClubs) {
-loader.load('Models/Karten/fourOfClubs.glb', (gltf) => {
-
-    fourOfClubs = gltf.scene;
-    scene.add(fourOfClubs);
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein fourOfClubs runtergefallen...')
-
-});
-}
-
-if (fourOfClubs) {
-loader.load('Models/Karten/fiveOfClubs.glb', (gltf) => {
-
-    fiveOfClubs = gltf.scene;
-    scene.add(fiveOfClubs);
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein fiveOfClubs runtergefallen...')
-
-});
-}
-
-if (fiveOfClubs) {
-loader.load('Models/Karten/sixOfClubs.glb', (gltf) => {
-
-    sixOfClubs = gltf.scene;
-    sixOfClubs.position.set(0, 0.15, 2)
-    scene.add(sixOfClubs);
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein sixOfClubs runtergefallen...')
-
-});
-}
-
-if (sixOfClubs) {
-loader.load('Models/Karten/sevenOfClubs.glb', (gltf) => {
-
-    sevenOfClubs = gltf.scene;
-    sevenOfClubs.position.set(0, 0.16, 2)
-    scene.add(sevenOfClubs);
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein sevenOfClubs runtergefallen...')
-
-});
-}
-
-if (sevenOfClubs) {
-loader.load('Models/Karten/eightOfClubs.glb', (gltf) => {
-
-    eightOfClubs = gltf.scene;
-    eightOfClubs.position.set(0, 0.17, 2)
-    scene.add(eightOfClubs);
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein eightOfClubs runtergefallen...')
-
-});
-}
-
-if (eightOfClubs) {
-loader.load('Models/Karten/nineOfClubs.glb', (gltf) => {
-
-    nineOfClubs = gltf.scene;
-    nineOfClubs.position.set(0, 0.18, 2)
-    scene.add(nineOfClubs);
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein nineOfClubs runtergefallen...')
-
-});
-}
-
-if (nineOfClubs) {
-loader.load('Models/Karten/tenOfClubs.glb', (gltf) => {
-
-    tenOfClubs = gltf.scene;
-    tenOfClubs.position.set(0, 0.19, 2)
-    scene.add(tenOfClubs);
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein tenOfClubs runtergefallen...')
-
-});
-}
-
-if (tenOfClubs) {
-loader.load('Models/Karten/jackOfClubs.glb', (gltf) => {
-
-    jackOfClubs = gltf.scene;
-    jackOfClubs.position.set(0, 0.2, 2)
-    scene.add(jackOfClubs);
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein jackOfClubs runtergefallen...')
-
-});
-}
-
-if (jackOfClubs) {
-loader.load('Models/Karten/queenOfClubs.glb', (gltf) => {
-
-    queenOfClubs = gltf.scene;
-    queenOfClubs.position.set(0, 0.21, 2)
-    scene.add(queenOfClubs);
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein queenOfClubs runtergefallen...')
-
-});
-}
-
-if (queenOfClubs) {
-loader.load('Models/Karten/kingOfClubs.glb', (gltf) => {
-
-    kingOfClubs = gltf.scene;
-    kingOfClubs.position.set(0, 0.22, 2)
-    scene.add(kingOfClubs);
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein kingOfClubs runtergefallen...')
-
-});
-}
-
-if (kingOfClubs) {
-loader.load('Models/Karten/aceOfSpades.glb', (gltf) => {
-
-    aceOfSpades = gltf.scene;
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein aceOfSpades runtergefallen...')
-
-});
-}
-
-if (aceOfSpades) {
-loader.load('Models/Karten/twoOfSpades.glb', (gltf) => {
-
-    twoOfSpades = gltf.scene;
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein twoOfSpades runtergefallen...')
-
-});
-}
-
-if (twoOfSpades) {
-loader.load('Models/Karten/threeOfSpades.glb', (gltf) => {
-
-    threeOfSpades = gltf.scene;
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein threeOfSpades runtergefallen...')
-
-});
-}
-
-if (threeOfSpades) {
-loader.load('Models/Karten/fourOfSpades.glb', (gltf) => {
-
-    fourOfSpades = gltf.scene;
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein fourOfSpades runtergefallen...')
-
-});
-}
-
-if (fourOfSpades) {
-loader.load('Models/Karten/fiveOfSpades.glb', (gltf) => {
-
-    fiveOfSpades = gltf.scene;
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein fiveOfSpades runtergefallen...')
-
-});
-}
-
-if (fiveOfSpades) {
-loader.load('Models/Karten/sixOfSpades.glb', (gltf) => {
-
-    sixOfSpades = gltf.scene;
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein sixOfSpades runtergefallen...')
-
-});
-}
-
-if (sixOfSpades) {
-loader.load('Models/Karten/sevenOfSpades.glb', (gltf) => {
-
-    sevenOfSpades = gltf.scene;
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein sevenOfSpades runtergefallen...')
-
-});
-}
-
-if (sevenOfSpades) {
-loader.load('Models/Karten/eightOfSpades.glb', (gltf) => {
-
-    eightOfSpades = gltf.scene;
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein eightOfSpades runtergefallen...')
-
-});
-}
-
-if (eightOfSpades) {
-loader.load('Models/Karten/nineOfSpades.glb', (gltf) => {
-
-    nineOfSpades = gltf.scene;
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein nineOfSpades runtergefallen...')
-
-});
-}
-
-if (nineOfSpades) {
-loader.load('Models/Karten/tenOfSpades.glb', (gltf) => {
-
-    tenOfSpades = gltf.scene;
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein tenOfSpades runtergefallen...')
-
-});
-}
-
-if (tenOfSpades) {
-loader.load('Models/Karten/jackOfSpades.glb', (gltf) => {
-
-    jackOfSpades = gltf.scene;
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein jackOfSpades runtergefallen...')
-
-});
-}
-
-if (jackOfSpades) {
-loader.load('Models/Karten/queenOfSpades.glb', (gltf) => {
-
-    queenOfSpades = gltf.scene;
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein queenOfSpades runtergefallen...')
-
-});
-}
-
-if (queenOfSpades) {
-loader.load('Models/Karten/kingOfSpades.glb', (gltf) => {
-
-    kingOfSpades = gltf.scene;
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein kingOfSpades runtergefallen...')
-
-});
-}
-
-if (kingOfSpades) {
-loader.load('Models/Karten/aceOfHearts.glb', (gltf) => {
-
-    aceOfHearts = gltf.scene;
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein aceOfHearts runtergefallen...')
-
-});
-}
-
-if (aceOfHearts) {
-loader.load('Models/Karten/twoOfHearts.glb', (gltf) => {
-
-    twoOfHearts = gltf.scene;
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein twoOfHearts runtergefallen...')
-
-});
-}
-
-if (twoOfHearts) {
-loader.load('Models/Karten/threeOfHearts.glb', (gltf) => {
-
-    threeOfHearts = gltf.scene;
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein threeOfHearts runtergefallen...')
-
-});
-}
-
-if (threeOfHearts) {
-loader.load('Models/Karten/fourOfHearts.glb', (gltf) => {
-
-    fourOfHearts = gltf.scene;
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein fourOfHearts runtergefallen...')
-
-});
-}
-
-if (fourOfHearts) {
-loader.load('Models/Karten/fiveOfHearts.glb', (gltf) => {
-
-    fiveOfHearts = gltf.scene;
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein fiveOfHearts runtergefallen...')
-
-});
-}
-
-if (fiveOfHearts) {
-loader.load('Models/Karten/sixOfHearts.glb', (gltf) => {
-
-    sixOfHearts = gltf.scene;
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein sixOfHearts runtergefallen...')
-
-});
-}
-
-if (sixOfHearts) {
-loader.load('Models/Karten/sevenOfHearts.glb', (gltf) => {
-
-    sevenOfHearts = gltf.scene;
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein sevenOfHearts runtergefallen...')
-
-});
-}
-
-if (sevenOfHearts) {
-loader.load('Models/Karten/eightOfHearts.glb', (gltf) => {
-
-    eightOfHearts = gltf.scene;
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein eightOfHearts runtergefallen...')
-
-});
-}
-
-if (eightOfHearts) {
-loader.load('Models/Karten/nineOfHearts.glb', (gltf) => {
-
-    nineOfHearts = gltf.scene;
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein nineOfHearts runtergefallen...')
-
-});
-}
-
-if (nineOfHearts) {
-loader.load('Models/Karten/tenOfHearts.glb', (gltf) => {
-
-    tenOfHearts = gltf.scene;
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein tenOfHearts runtergefallen...')
-
-});
-}
-
-if (tenOfHearts) {
-loader.load('Models/Karten/jackOfHearts.glb', (gltf) => {
-
-    jackOfHearts = gltf.scene;
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein jackOfHearts runtergefallen...')
-
-});
-}
-
-if (jackOfHearts) {
-loader.load('Models/Karten/queenOfHearts.glb', (gltf) => {
-
-    queenOfHearts = gltf.scene;
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein queenOfHearts runtergefallen...')
-
-});
-}
-
-if (queenOfHearts) {
-loader.load('Models/Karten/kingOfHearts.glb', (gltf) => {
-
-    kingOfHearts = gltf.scene;
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein kingOfHearts runtergefallen...')
-
-});
-}
-
-if (kingOfHearts) {
-loader.load('Models/Karten/aceOfDiamonds.glb', (gltf) => {
-
-    aceOfDiamonds = gltf.scene;
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein aceOfDiamonds runtergefallen...')
-
-});
-}
-
-if (aceOfDiamonds) {
-loader.load('Models/Karten/twoOfDiamonds.glb', (gltf) => {
-
-    twoOfDiamonds = gltf.scene;
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein twoOfDiamonds runtergefallen...')
-
-});
-}
-
-if (twoOfDiamonds) {
-loader.load('Models/Karten/threeOfDiamonds.glb', (gltf) => {
-
-    threeOfDiamonds = gltf.scene;
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein threeOfDiamonds runtergefallen...')
-
-});
-}
-
-if (threeOfDiamonds) {
-loader.load('Models/Karten/fourOfDiamonds.glb', (gltf) => {
-
-    fourOfDiamonds = gltf.scene;
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein fourOfDiamonds runtergefallen...')
-
-});
-}
-
-if (fourOfDiamonds) {
-loader.load('Models/Karten/fiveOfDiamonds.glb', (gltf) => {
-
-    fiveOfDiamonds = gltf.scene;
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein fiveOfDiamonds runtergefallen...')
-
-});
-}
-
-if (fiveOfDiamonds) {
-loader.load('Models/Karten/sixOfDiamonds.glb', (gltf) => {
-
-    sixOfDiamonds = gltf.scene;
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein sixOfDiamonds runtergefallen...')
-
-});
-}
-
-if (sixOfDiamonds) {
-loader.load('Models/Karten/sevenOfDiamonds.glb', (gltf) => {
-
-    sevenOfDiamonds = gltf.scene;
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein sevenOfDiamonds runtergefallen...')
-
-});
-}
-
-if (sevenOfDiamonds) {
-loader.load('Models/Karten/eightOfDiamonds.glb', (gltf) => {
-
-    eightOfDiamonds = gltf.scene;
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein eightOfDiamonds runtergefallen...')
-
-});
-}
-
-if (eightOfDiamonds) {
-loader.load('Models/Karten/nineOfDiamonds.glb', (gltf) => {
-
-    nineOfDiamonds = gltf.scene;
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein nineOfDiamonds runtergefallen...')
-
-});
-}
-
-if (nineOfDiamonds) {
-loader.load('Models/Karten/tenOfDiamonds.glb', (gltf) => {
-
-    tenOfDiamonds = gltf.scene;
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein tenOfDiamonds runtergefallen...')
-
-});
-}
-
-if (tenOfDiamonds) {
-loader.load('Models/Karten/jackOfDiamonds.glb', (gltf) => {
-
-    jackOfDiamonds = gltf.scene;
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein jackOfDiamonds runtergefallen...')
-
-});
-}
-
-if (jackOfDiamonds) {
-loader.load('Models/Karten/queenOfDiamonds.glb', (gltf) => {
-
-    queenOfDiamonds = gltf.scene;
-
-}, undefined, function (error) {
-    console.error('Ich glaub mir ist ein queenOfDiamonds runtergefallen...')
-
-});
-}
-
-if (queenOfDiamonds) {
-    loader.load('Models/Karten/kingOfDiamonds.glb', (gltf) => {
-
-        kingOfDiamonds = gltf.scene;
-
-    }, undefined, function (error) {
-        console.error('Ich glaub mir ist ein kingOfDiamonds runtergefallen...')
-
+/*
+async function loadGTLF(url) {
+    const loader = new GLTFLoader();
+
+    return new Promise((resolve, reject) => {
+        loader.load(
+            url,
+            (gltf) => {
+                Deck[test] = gltf.scene;
+                console.log('gltf datei geladen:', url)
+                scene.add(Deck[test])
+                resolve(gltf);
+            },
+            undefined,
+            (error) => {
+                console.error('Fehler beim laden der gltf datei', error)
+                reject(error);
+            }
+        );
     });
 }
+
+async function loadGLTFModelsInBatches(urls, batchSize) {
+
+    let values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+    let types = ["C", "D", "H", "S"];
+    Deck = [];
+
+    for (let k = 0; k < types.length; k++) {
+        for (let j = 0; j < values.length; j++) {
+            Deck.push(values[j] + "-" + types[k])
+        }
+    }
+
+    for (let i = 0; i < urls.length; i += batchSize) {
+        const batch = urls.slice(i, i + batchSize).map(url => loadGTLF(url));
+        await Promise.all(batch);
+    }
+}
+
+loadGLTFModelsInBatches(gltfURLs, batchSize);
+*/
 
 // Window automatic resize
 window.addEventListener('resize', onWindowResize);
@@ -769,13 +236,15 @@ animate();
     Check nach Blackjack
         falls nötig auch bei Dealer
             falls nötig spieler nach insurance fragen
-    
+
     Erste Spieler aktion
         Spieler entscheidet zwischen Hit/Stand(/Double/Split)
             Aktion wird ausgeführt
         Loop bis Punktzahl auf allen händen >= 21 oder Stand auf alle hände zutrifft
-    
+
     Spiel zuende
         wiederhole Spiel
 
 */
+
+// ich bin müde und habe keinen bock mehr, bitte lasst mich einfach sterben
